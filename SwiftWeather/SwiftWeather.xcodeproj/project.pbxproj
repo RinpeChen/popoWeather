@@ -317,7 +317,7 @@
 				INFOPLIST_FILE = SwiftWeather/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Miaoqu.SwiftWeather;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rinpe.popoWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftWeather/SwiftWeather-bridging.h";
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
@@ -333,7 +333,7 @@
 				INFOPLIST_FILE = SwiftWeather/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Miaoqu.SwiftWeather;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rinpe.popoWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftWeather/SwiftWeather-bridging.h";
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";

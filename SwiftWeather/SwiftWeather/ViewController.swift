@@ -36,6 +36,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIAlertViewDe
     {
         super.viewWillAppear(animated)
         
+        UIApplication.sharedApplication().setStatusBarStyle(.Default, animated: true)
+        
         // 判断是否开启定位功能
         if !CLLocationManager.locationServicesEnabled() {
             let alertView:UIAlertView = UIAlertView(title: "温馨提示", message: "亲, 没有打开定位功能哦", delegate: self, cancelButtonTitle: "设置")
@@ -120,7 +122,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIAlertViewDe
     {
         let manager:AFHTTPSessionManager = AFHTTPSessionManager()
         let url = "http://api.openweathermap.org/data/2.5/weather"
-        let param = ["lat":latitude, "lon":longitude, "cnt":0, "appid":"44db6a862fba0b067b1930da0d769e98"]
+        let param = ["lat":latitude, "lon":longitude, "cnt":0, "appid":"0567810ef41a69c08ba244b106d949fc"]
         manager.requestSerializer.timeoutInterval = 15;
         manager.GET(url, parameters: param, progress: nil,
             success: { [unowned self] (task, responseObject) in
@@ -135,6 +137,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIAlertViewDe
     // 更新界面
     func updateUI(responseObject: NSDictionary!)
     {
+        UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: true)
+        
         // 温度
         if let temp = responseObject["main"]?["temp"] as? Double {
             var temperature: Double
@@ -166,7 +170,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIAlertViewDe
             self.cityLabel.alpha = 1
             self.weatherView.alpha = 1
             self.tempLabel.alpha = 1
-            self.view.backgroundColor = UIColor(red: CGFloat(arc4random_uniform(255)) / 255.0, green: CGFloat(arc4random_uniform(255)) / 255.0, blue: CGFloat(arc4random_uniform(255)) / 255.0, alpha: 1.0)
+            //            self.view.backgroundColor = UIColor(red: CGFloat(arc4random_uniform(155)) / 255.0, green: CGFloat(arc4random_uniform(255)) / 255.0, blue: CGFloat(arc4random_uniform(255)) / 255.0, alpha: 1.0)
+            self.view.backgroundColor = UIColor.blackColor()
             }) { [unowned self] (finished) -> Void in
                 // 隐藏提示
                 self.indicator.stopAnimation()
